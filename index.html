@@ -35,59 +35,67 @@
     </style>
   </head>
   <body>
-    <form class="form">
-      <table class="table">
-        <tr class="tr-th">
-          <td class="td-day"><label for="day">Day</label></td>
-          <td class="td-month"><label for="month">Month</label></td>
-          <td class="td-year"><label for="year">Year</label></td>
-        </tr>
-        <tr>
-          <td class="tr-td">
-            <input
-              type="number"
-              id="day"
-              class="input"
-              name="day"
-              min="1"
-              max="31"
-              onclick="resetFields()"
-              placeholder="DD"
-              required
-            />
-          </td>
-          <td class="tr-td">
-            <input
-              type="number"
-              id="month"
-              class="input"
-              class="input-month"
-              name="month"
-              min="1"
-              max="12"
-              placeholder="MM"
-              required
-            />
-          </td>
-          <td class="tr-td">
-            <input
-              type="number"
-              id="year"
-              class="input"
-              name="year"
-              min="1900"
-              max="2100"
-              placeholder="YYYY"
-              required
-            />
-          </td>
-        </tr>
-      </table>
-      <button type="button" onclick="calculateAge()"></button>
-    </form>
+    <div class="div-app">
+      <form class="form">
+        <table class="table">
+          <tr class="tr-th">
+            <td class="td-day"><label for="day">Day</label></td>
+            <td class="td-month"><label for="month">Month</label></td>
+            <td class="td-year"><label for="year">Year</label></td>
+          </tr>
+          <tr>
+            <td class="tr-td">
+              <input
+                type="number"
+                id="day"
+                class="input"
+                name="day"
+                min="1"
+                max="31"
+                onclick="resetFields()"
+                placeholder="DD"
+                required
+              />
+            </td>
+            <td class="tr-td">
+              <input
+                type="number"
+                id="month"
+                class="input"
+                class="input-month"
+                name="month"
+                min="1"
+                max="12"
+                placeholder="MM"
+                required
+              />
+            </td>
+            <td class="tr-td">
+              <input
+                type="number"
+                id="year"
+                class="input"
+                name="year"
+                min="1900"
+                max="2100"
+                placeholder="YYYY"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+        <div class="div-btn">
+          <button class="btn" type="button" onclick="calculateAge()"></button>
+          <div class="row-h"></div>
+          <div class="row-v"></div>
+          <div class="arc-left"></div>
+          <div class="arc-right"></div>
+        </div>
+      </form>
 
-    <div id="age"></div>
-    <div id="error"></div>
+      <div id="age"></div>
+      <div id="error"></div>
+    </div>
 
     <!--Day DD Month MM Year YYYY -- years -- months -- days-->
 

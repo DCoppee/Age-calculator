@@ -3,9 +3,25 @@ body {
   font-weight: 400;
   margin: 0;
   padding: 0;
+  background-color: rgb(244, 244, 244);
+}
+
+.div-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 130vw;
+  margin: 10vw 2vw 2vw 2vw;
+  padding: 0;
+  background-color: white;
+  border-radius: 10px 10px 45px 10px;
 }
 
 .form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 10vw;
 }
 
@@ -28,10 +44,68 @@ body {
 }
 
 .input {
-  height: 10vw;
-  width: 25vw;
+  height: 8vw;
+  width: 21vw;
+  padding: 2vw;
+  color: black;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
   border-color: lightgrey;
   border-width: 1px;
   border-radius: 8px;
   border-style: solid;
+}
+
+.btn {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  margin: 8vw 0 10vw 0;
+  border-radius: 45px;
+  border-style: none;
+  background-color: hsl(259, 100%, 65%);
+  z-index: 1;
+}
+
+.row-h {
+  position: absolute;
+  margin-left: -29vw;
+  border-top: solid 1px rgb(232, 232, 232);
+  margin-top: -20vw;
+  width: 76vw;
+}
+
+.row-v {
+  border-right: solid 1px white;
+  height: 7vw;
+  position: absolute;
+  left: 50vw;
+  top: 51vw;
+  z-index: 1;
+}
+
+.arc-left {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 0 100px 0 0;
+  border: solid 1px white;
+  border-left: none;
+  border-bottom: none;
+  top: 54vw;
+  position: absolute;
+  z-index: 1;
+  left: 46vw;
+}
+
+.arc-right {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 100px 0 0 0;
+  border: solid 1px white;
+  border-right: none;
+  border-bottom: none;
+  top: 54vw;
+  position: absolute;
+  z-index: 1;
+  left: 50vw;
 }/*# sourceMappingURL=styles.css.map */
