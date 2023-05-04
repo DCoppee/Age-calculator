@@ -17,15 +17,18 @@ function calculateAge() {
 
   // Vérifier si les champs ne sont pas vides
   if (!day || !month || !year) {
-    error = "Veuillez remplir tous les champs";
+    error =
+      "<span class='error-fill'>Tous les champs doivent être remplis</span>";
   }
   // Vérifier si les valeurs sont valides
   else if (isNaN(day) || isNaN(month) || isNaN(year)) {
-    error = "Veuillez entrer des valeurs numériques valides";
+    error =
+      "<span class='error-valid'>Ceci ne correspond pas à une date valide</span>";
   }
   // Vérifier si l'année est dans le futur
   else if (year > new Date().getFullYear()) {
-    error = "L'année saisie ne peut pas être dans le futur";
+    error =
+      "<span class='error-future'>L'année saisie ne peut pas être dans le futur</span>";
   }
   // Vérifier si la date est valide
   else if (
@@ -61,18 +64,42 @@ function calculateAge() {
       birthdate.getDate() === today.getDate() &&
       birthdate.getMonth() === today.getMonth()
     ) {
-      error = "Joyeux anniversaire!";
-    }
-  }
+      var birthdayDiv = document.getElementById("birthday");
+      var ageDiv = document.getElementById("age");
 
-  // Afficher le résultat ou le message d'erreur
-  if (error) {
-    document.getElementById("age").innerHTML = "";
-    document.getElementById("error").innerHTML = error;
-  } else {
-    document.getElementById("age").innerHTML =
-      age.years + " years, " + age.months + " months, " + age.days + " days";
-    document.getElementById("error").innerHTML = "";
+      birthdayDiv.innerHTML = "Joyeux anniversaire !";
+      birthdayDiv.style.display = "block";
+
+      ageDiv.innerHTML =
+        "<span class='years'>" +
+        age.years +
+        "</span> years<br>" +
+        "<span class='months'>" +
+        age.months +
+        "</span> months<br>" +
+        "<span class='days'>" +
+        age.days +
+        "</span> days";
+      ageDiv.style.display = "block";
+    } else {
+      // Afficher le résultat ou le message d'erreur
+      if (error) {
+        document.getElementById("age").innerHTML = "";
+        document.getElementById("error").innerHTML = error;
+      } else {
+        document.getElementById("age").innerHTML =
+          "<span class='years'>" +
+          age.years +
+          "</span> ans<br>" +
+          "<span class='months'>" +
+          age.months +
+          "</span> mois<br>" +
+          "<span class='days'>" +
+          age.days +
+          "</span> jours";
+        document.getElementById("error").innerHTML = "";
+      }
+    }
   }
 }
 
