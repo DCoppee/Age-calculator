@@ -1,112 +1,85 @@
-function calculateAge() {
-  var day = parseInt(document.getElementById("day").value);
-  var month = parseInt(document.getElementById("month").value);
-  var year = parseInt(document.getElementById("year").value);
+// Récupération des éléments HTML
+const dayInput = document.getElementById("day");
+const monthInput = document.getElementById("month");
+const yearInput = document.getElementById("year");
+const ageDiv = document.getElementById("age");
+const errorDiv = document.getElementById("error");
+const birthdayDiv = document.getElementById("birthday");
 
-  var age = {
-    years: 0,
-    months: 0,
-    days: 0,
-  };
-
-  var error = "";
-
-  function daysInMonth(month, year) {
-    return new Date(year, month, 0).getDate();
-  }
-
-  // Vérifier si les champs ne sont pas vides
-  if (!day || !month || !year) {
-    error =
-      "<span class='error-fill'>Tous les champs doivent être remplis</span>";
-  }
-  // Vérifier si les valeurs sont valides
-  else if (isNaN(day) || isNaN(month) || isNaN(year)) {
-    error =
-      "<span class='error-valid'>Ceci ne correspond pas à une date valide</span>";
-  }
-  // Vérifier si l'année est dans le futur
-  else if (year > new Date().getFullYear()) {
-    error =
-      "<span class='error-future'>L'année saisie ne peut pas être dans le futur</span>";
-  }
-  // Vérifier si la date est valide
-  else if (
-    day <= 0 ||
-    day > 31 ||
-    month <= 0 ||
-    month > 12 ||
-    year <= 0 ||
-    year > new Date().getFullYear()
-  ) {
-    error = "Veuillez entrer une date valide";
-  } else {
-    // Calculer l'âge en années, mois et jours
-    var birthdate = new Date(new Date().getFullYear(), month - 1, day);
-    var today = new Date();
-    age.years = today.getFullYear() - year;
-    age.months = today.getMonth() - month;
-    age.days = today.getDate() - day;
-
-    // Gérer les cas où le nombre de mois ou de jours est négatif
-    if (age.months < 0) {
-      age.years--;
-      age.months += 12;
-    }
-
-    if (age.days < 0) {
-      age.months--;
-      age.days += daysInMonth(today.getMonth() + 1, today.getFullYear());
-    }
-
-    // Gérer le cas où l'utilisateur est né le jour même
-    if (
-      birthdate.getDate() === today.getDate() &&
-      birthdate.getMonth() === today.getMonth()
-    ) {
-      var birthdayDiv = document.getElementById("birthday");
-      var ageDiv = document.getElementById("age");
-
-      birthdayDiv.innerHTML = "Joyeux anniversaire !";
-      birthdayDiv.style.display = "block";
-
-      ageDiv.innerHTML =
-        "<span class='years'>" +
-        age.years +
-        "</span> years<br>" +
-        "<span class='months'>" +
-        age.months +
-        "</span> months<br>" +
-        "<span class='days'>" +
-        age.days +
-        "</span> days";
-      ageDiv.style.display = "block";
-    } else {
-      // Afficher le résultat ou le message d'erreur
-      if (error) {
-        document.getElementById("age").innerHTML = "";
-        document.getElementById("error").innerHTML = error;
-      } else {
-        document.getElementById("age").innerHTML =
-          "<span class='years'>" +
-          age.years +
-          "</span> ans<br>" +
-          "<span class='months'>" +
-          age.months +
-          "</span> mois<br>" +
-          "<span class='days'>" +
-          age.days +
-          "</span> jours";
-        document.getElementById("error").innerHTML = "";
-      }
-    }
-  }
+// Fonction de vérification de la validité de la date
+function isValidDate(day, month, year) {
+  const date = new Date(year, month - 1, day);
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+  );
 }
 
+// Fonction de calcul de l'âge et affichage du résultat
+function calculateAge() {
+  const day = Number(dayInput.value);
+  const month = Number(monthInput.value);
+  const year = Number(yearInput.value);
+
+  // Vérification que les champs sont remplis
+  if (!day || !month || !year) {
+    errorDiv.textContent = "Veuillez remplir tous les champs.";
+    ageDiv.textContent = "";
+    birthdayDiv.textContent = "";
+    return;
+  }
+
+  // Vérification de la validité de la date
+  if (!isValidDate(day, month, year)) {
+    errorDiv.textContent = "Veuillez entrer une date valide.";
+    ageDiv.textContent = "";
+    birthdayDiv.textContent = "";
+    return;
+  }
+
+  // Vérification que la date est dans le passé
+  const currentDate = new Date();
+  const inputDate = new Date(year, month - 1, day);
+  if (inputDate > currentDate) {
+    errorDiv.textContent = "Veuillez entrer une date antérieure à aujourd'hui.";
+    ageDiv.textContent = "";
+    birthdayDiv.textContent = "";
+    return;
+  }
+
+  // Calcul de l'âge en années, mois et jours
+  const diffTime = Math.abs(currentDate - inputDate);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffYears = Math.floor(diffDays / 365.25);
+  const diffMonths = Math.floor((diffDays % 365.25) / 30.4375);
+  const diffRemainingDays = Math.floor(diffDays % 30.4375);
+
+  // Affichage du résultat
+  ageDiv.innerHTML = `
+  <span class="years">${diffYears}</span> ans<br>
+  <span class="months">${diffMonths}</span> mois<br>
+  <span class="days">${diffRemainingDays}</span> jours
+`;
+
+  // Vérification si c'est l'anniversaire de l'utilisateur
+  if (
+    inputDate.getMonth() === currentDate.getMonth() &&
+    inputDate.getDate() === currentDate.getDate()
+  ) {
+    birthdayDiv.textContent = "Joyeux anniversaire !";
+  } else {
+    birthdayDiv.textContent = "";
+  }
+  errorDiv.textContent = "";
+}
+
+// Fonction de remise à zéro des champs
 function resetFields() {
-  document.getElementById("day").value = "";
-  document.getElementById("month").value = "";
-  document.getElementById("year").value = "";
-  document.getElementById("age").innerHTML = "";
-  document.getElementById("error").innerHTML = "";
+  ageDiv.textContent = "";
+  errorDiv.textContent = "";
+  birthdayDiv.textContent = "";
+  dayInput.value = "";
+  monthInput.value = "";
+  yearInput.value = "";
 }

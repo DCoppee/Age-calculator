@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -21,18 +20,7 @@
       rel="stylesheet"
     />
 
-    <title>Age calculator</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <title>Age Calculator</title>
   </head>
   <body>
     <div class="div-app">
@@ -87,24 +75,25 @@
         <div class="div-btn">
           <button class="btn" type="button" onclick="calculateAge()"></button>
           <div class="row-h"></div>
-          <div class="row-v"></div>
-          <div class="arc-left"></div>
-          <div class="arc-right"></div>
+          <div class="div-arrow">
+            <div class="row-v"></div>
+            <div class="arc-left"></div>
+            <div class="arc-right"></div>
+          </div>
         </div>
       </form>
 
       <div class="div-age" id="age"></div>
-      <div class="div-birthday" id="birthday"></div>
       <div class="div-error" id="error"></div>
+      <div class="div-birthday" id="birthday"></div>
     </div>
-
-    <!--Day DD Month MM Year YYYY -- years -- months -- days-->
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">DCoppee</a>.
+      >
+      ⭐ Coded by <a href="#">DCoppee</a>
     </div>
     <script src="assets/script.js"></script>
   </body>
