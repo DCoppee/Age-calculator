@@ -24,7 +24,7 @@ body {
         width: 60vw;
         height: 50vw;
         border-radius: 10px 10px 145px 10px;
-        margin-top: 12vw;
+        margin-top: 4vw;
     }
 }
 .form {
@@ -35,12 +35,16 @@ body {
     @include desktop {
         flex-direction: column;
         display: flex;
+        margin: 4vw 0 0 4vw;
     }
 }
 .table {
     display: flex;
     justify-content: center;
     margin: 0;
+    @include desktop {
+        width: 34vw;
+    }
 }
 .tr-th {
     color: hsl(0, 1%, 44%);
@@ -72,11 +76,21 @@ body {
     border-radius: 8px;
     border-style: solid;
     @include desktop {
-        width: 6vw;
-        height: 1vw;
-        font-size: 2.5vw;
+        width: 7vw;
+        height: 0.5vw;
+        font-size: 2vw;
         padding-left: 1vw;
     }
+}
+.div-btn {
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        width: 50vw;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
 }
 .btn {
     position: relative;
@@ -89,9 +103,9 @@ body {
     z-index: 1;
     @include desktop {
         border-radius: 145px;
-        width: 10vw;
-        height: 10vw;
-        margin: 0;
+        width: 8vw;
+        height: 8vw;
+        margin: 0
     }
 }
 .row-h {
@@ -100,6 +114,12 @@ body {
     border-top: solid 1px rgb(232, 232, 232);
     margin-top: -16vw;
     width: 76vw;
+    @include desktop {
+        width: 42vw;
+        border-top: solid 3px rgb(232, 232, 232);
+        position: relative;
+        margin: 0;
+    }
 }
 .row-v {
     border-right: solid 1px white;
@@ -139,6 +159,11 @@ body {
     font-style: italic;
     line-height: 17vw;
     margin-left: 19vw;
+    @include desktop {
+        margin-left: 5vw;
+        font-size: 9vw;
+        line-height: 9vw;
+    }
 }
 .years, .months, .days {
     color:hsl(259, 100%, 65%);
@@ -167,7 +192,17 @@ body {
     letter-spacing: 6vw;
     top: 14vw;
     animation: blink 1s ease-in-out infinite;
+    @include desktop {
+        margin: 0px;
+    font-size: 22vw;
+    line-height: 25vw;
+    letter-spacing: 0vw;
+    width: 95vw;
+    top: -1vw;
+    left: 1vw;
+    }
 }
+
 
 @keyframes blink {
   0% {
