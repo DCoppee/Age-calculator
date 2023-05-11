@@ -128,6 +128,11 @@ body {
     left: 49vw;
     top: 54vw;
     z-index: 1;
+    @include desktop {
+        height: 4vw;
+        top: 17vw;
+        left: 70vw;
+    }
 }
 .arc-left {
     width: 4vw;
@@ -140,6 +145,12 @@ body {
     position: absolute;
     z-index: 1;
     left: 45vw;
+    @include desktop {
+        top: 18vw;
+        left: 67vw;
+        height: 3vw;
+        width: 3vw;
+    }
 }
 .arc-right {
     width: 4vw;
@@ -152,6 +163,12 @@ body {
     position: absolute;
     z-index: 1;
     left: 49vw;
+    @include desktop {
+        top: 18vw;
+        left: 70vw;
+        height: 3vw;
+        width: 3vw;
+    }
 }
 .div-age {
     font-size: 15vw;
@@ -202,7 +219,6 @@ body {
     left: 1vw;
     }
 }
-
 
 @keyframes blink {
   0% {

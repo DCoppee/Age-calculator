@@ -152,6 +152,13 @@ body {
   top: 54vw;
   z-index: 1;
 }
+@media screen and (min-width: 1280px) {
+  .row-v {
+    height: 4vw;
+    top: 17vw;
+    left: 70vw;
+  }
+}
 
 .arc-left {
   width: 4vw;
@@ -165,6 +172,14 @@ body {
   z-index: 1;
   left: 45vw;
 }
+@media screen and (min-width: 1280px) {
+  .arc-left {
+    top: 18vw;
+    left: 67vw;
+    height: 3vw;
+    width: 3vw;
+  }
+}
 
 .arc-right {
   width: 4vw;
@@ -177,6 +192,14 @@ body {
   position: absolute;
   z-index: 1;
   left: 49vw;
+}
+@media screen and (min-width: 1280px) {
+  .arc-right {
+    top: 18vw;
+    left: 70vw;
+    height: 3vw;
+    width: 3vw;
+  }
 }
 
 .div-age {
