@@ -20,6 +20,10 @@ body {
     padding: 0;
     background-color: white;
     border-radius: 10px 10px 45px 10px;
+    @include tablet {
+        height: 56vw;
+        width: 70vw;
+    }
     @include desktop {
         width: 60vw;
         height: 50vw;
@@ -32,6 +36,9 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 10vw;
+    @include tablet {
+        margin-top: 33px;
+    }
     @include desktop {
         flex-direction: column;
         display: flex;
@@ -52,6 +59,9 @@ body {
     font-weight: 700;
     font-size: 3vw;
     letter-spacing: 1vw;
+    @include tablet {
+        font-size: 1.5vw;
+    }
     @include desktop {
     font-size: 1vw;
     letter-spacing: 0.5vw;
@@ -59,8 +69,11 @@ body {
 }
 .tr-td {
     width: 28vw;
+    @include tablet {
+        width: 16vw;
+    }
     @include desktop {
-    width: 11vw;
+        width: 11vw;
     }
 }
 .input {
@@ -75,6 +88,11 @@ body {
     border-width: 1px;
     border-radius: 8px;
     border-style: solid;
+    @include tablet {
+        font-size: 3vw;
+        width: 10vw;
+        height: 2vw;
+    }
     @include desktop {
         width: 7vw;
         height: 0.5vw;
@@ -83,6 +101,11 @@ body {
     }
 }
 .div-btn {
+    @include tablet {
+        display: flex;
+        width: 49vw;
+        justify-content: center;
+    }
     @include desktop {
         display: flex;
         flex-direction: row;
@@ -101,6 +124,13 @@ body {
     border-style: none;
     background-color: hsl(259, 100%, 65%);
     z-index: 1;
+    @include tablet {
+        border-radius: 90%;
+        width: 10vw;
+        height: 10vw;
+        margin: 0;
+        margin-top: 1vw;
+    }
     @include desktop {
         border-radius: 145px;
         width: 8vw;
@@ -114,11 +144,19 @@ body {
     border-top: solid 1px rgb(232, 232, 232);
     margin-top: -16vw;
     width: 76vw;
+    top: 74vw;
+    @include tablet {
+        left: 55vw;
+        width: 48vw;
+        top: 45vw;
+    }
     @include desktop {
         width: 42vw;
         border-top: solid 3px rgb(232, 232, 232);
         position: relative;
         margin: 0;
+        top: 0;
+        left:0
     }
 }
 .row-v {
@@ -128,6 +166,16 @@ body {
     left: 49vw;
     top: 54vw;
     z-index: 1;
+    @include tablet {
+        top: 26vw;
+        height: 5vw;
+        left: 50vw;
+    }
+    @include desktopS {
+        height: 4vw;
+        top: 17vw;
+        left: 69.5vw;
+    }
     @include desktop {
         height: 4vw;
         top: 17vw;
@@ -145,6 +193,18 @@ body {
     position: absolute;
     z-index: 1;
     left: 45vw;
+    @include tablet {
+        top: 28vw;
+        left: 47vw;
+        width: 3vw;
+        height: 3vw;
+    }
+    @include desktopS {
+        top: 18.5vw;
+        left: 67vw;
+        height: 2.5vw;
+        width: 2.5vw;
+    }
     @include desktop {
         top: 18vw;
         left: 67vw;
@@ -163,6 +223,18 @@ body {
     position: absolute;
     z-index: 1;
     left: 49vw;
+    @include tablet {
+        top: 28vw;
+        left: 50vw;
+        width: 3vw;
+        height: 3vw;
+    }
+    @include desktopS {
+        top: 18.5vw;
+        left: 69.5vw;
+        height: 2.5vw;
+        width: 2.5vw;
+    }
     @include desktop {
         top: 18vw;
         left: 70vw;
@@ -176,6 +248,11 @@ body {
     font-style: italic;
     line-height: 17vw;
     margin-left: 19vw;
+    @include tablet {
+        font-size: 8vw;
+        line-height: 9vw;
+        margin-left: 10vw;
+    }
     @include desktop {
         margin-left: 5vw;
         font-size: 9vw;
@@ -209,6 +286,13 @@ body {
     letter-spacing: 6vw;
     top: 14vw;
     animation: blink 1s ease-in-out infinite;
+    @include tablet {
+        line-height: 17vw;
+        font-size: 16vw;
+        margin-left: -13vw;
+        letter-spacing: 2vw;
+        top: 11vw;
+    }
     @include desktop {
         margin: 0px;
     font-size: 22vw;

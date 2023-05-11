@@ -20,7 +20,13 @@ body {
   background-color: white;
   border-radius: 10px 10px 45px 10px;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .div-app {
+    height: 56vw;
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .div-app {
     width: 60vw;
     height: 50vw;
@@ -35,7 +41,12 @@ body {
   flex-wrap: wrap;
   margin-top: 10vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .form {
+    margin-top: 33px;
+  }
+}
+@media screen and (min-width: 1440px) {
   .form {
     flex-direction: column;
     display: flex;
@@ -48,7 +59,7 @@ body {
   justify-content: center;
   margin: 0;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .table {
     width: 34vw;
   }
@@ -61,7 +72,12 @@ body {
   font-size: 3vw;
   letter-spacing: 1vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .tr-th {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .tr-th {
     font-size: 1vw;
     letter-spacing: 0.5vw;
@@ -71,7 +87,12 @@ body {
 .tr-td {
   width: 28vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .tr-td {
+    width: 16vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .tr-td {
     width: 11vw;
   }
@@ -90,7 +111,14 @@ body {
   border-radius: 8px;
   border-style: solid;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .input {
+    font-size: 3vw;
+    width: 10vw;
+    height: 2vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .input {
     width: 7vw;
     height: 0.5vw;
@@ -99,7 +127,14 @@ body {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .div-btn {
+    display: flex;
+    width: 49vw;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1440px) {
   .div-btn {
     display: flex;
     flex-direction: row;
@@ -119,7 +154,16 @@ body {
   background-color: hsl(259, 100%, 65%);
   z-index: 1;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .btn {
+    border-radius: 90%;
+    width: 10vw;
+    height: 10vw;
+    margin: 0;
+    margin-top: 1vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .btn {
     border-radius: 145px;
     width: 8vw;
@@ -134,13 +178,23 @@ body {
   border-top: solid 1px rgb(232, 232, 232);
   margin-top: -16vw;
   width: 76vw;
+  top: 74vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .row-h {
+    left: 55vw;
+    width: 48vw;
+    top: 45vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .row-h {
     width: 42vw;
     border-top: solid 3px rgb(232, 232, 232);
     position: relative;
     margin: 0;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -152,7 +206,21 @@ body {
   top: 54vw;
   z-index: 1;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .row-v {
+    top: 26vw;
+    height: 5vw;
+    left: 50vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .row-v {
+    height: 4vw;
+    top: 17vw;
+    left: 69.5vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .row-v {
     height: 4vw;
     top: 17vw;
@@ -172,7 +240,23 @@ body {
   z-index: 1;
   left: 45vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .arc-left {
+    top: 28vw;
+    left: 47vw;
+    width: 3vw;
+    height: 3vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .arc-left {
+    top: 18.5vw;
+    left: 67vw;
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .arc-left {
     top: 18vw;
     left: 67vw;
@@ -193,7 +277,23 @@ body {
   z-index: 1;
   left: 49vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .arc-right {
+    top: 28vw;
+    left: 50vw;
+    width: 3vw;
+    height: 3vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .arc-right {
+    top: 18.5vw;
+    left: 69.5vw;
+    height: 2.5vw;
+    width: 2.5vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .arc-right {
     top: 18vw;
     left: 70vw;
@@ -209,7 +309,14 @@ body {
   line-height: 17vw;
   margin-left: 19vw;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .div-age {
+    font-size: 8vw;
+    line-height: 9vw;
+    margin-left: 10vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .div-age {
     margin-left: 5vw;
     font-size: 9vw;
@@ -247,7 +354,16 @@ body {
   top: 14vw;
   animation: blink 1s ease-in-out infinite;
 }
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
+  .div-birthday {
+    line-height: 17vw;
+    font-size: 16vw;
+    margin-left: -13vw;
+    letter-spacing: 2vw;
+    top: 11vw;
+  }
+}
+@media screen and (min-width: 1440px) {
   .div-birthday {
     margin: 0px;
     font-size: 22vw;
